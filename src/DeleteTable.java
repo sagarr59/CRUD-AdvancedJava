@@ -1,17 +1,17 @@
+
 import java.sql.*;
-class Main{
+class DeleteTable{
     public static void main(String[] args) {
         String name="root";
-        String password="";
-        String url="jdbc:mysql://localhost:3306";
-        String sql="Create database JavaDB";
+        String pass="";
+        String url="jdbc:mysql://localhost:3306/javadb";
+        String sql="Drop Table sagar ";
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection(url,name,password);
-
+            Connection con=DriverManager.getConnection(url,name,pass);
             Statement st=con.createStatement();
             st.executeUpdate(sql);
-            System.out.println("Database created successfully");
+            System.out.println("Deletion Success");
         }
         catch(Exception e){
             System.out.println(e.getMessage());
